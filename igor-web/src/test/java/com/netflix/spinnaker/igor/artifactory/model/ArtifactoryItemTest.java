@@ -33,7 +33,7 @@ class ArtifactoryItemTest {
     artifact.setRepo("libs-demo-local");
 
     Artifact matchableArtifact =
-        artifact.toMatchableArtifact(ArtifactoryRepositoryType.MAVEN, "http://localhost:8080");
+        artifact.toMatchableArtifact(ArtifactoryRepositoryType.Maven, "http://localhost:8080");
     assertThat(matchableArtifact).isNotNull();
     assertThat(matchableArtifact.getType()).isEqualTo("maven/file");
     assertThat(matchableArtifact.getReference())
@@ -54,7 +54,7 @@ class ArtifactoryItemTest {
     artifact.setRepo("demo-helm-local");
 
     Artifact matchableArtifact =
-        artifact.toMatchableArtifact(ArtifactoryRepositoryType.HELM, "http://localhost:8080");
+        artifact.toMatchableArtifact(ArtifactoryRepositoryType.Helm, "http://localhost:8080");
     assertThat(matchableArtifact).isNotNull();
     assertThat(matchableArtifact.getType()).isEqualTo("helm/file");
     assertThat(matchableArtifact.getVersion()).isEqualTo("0.0.1");
@@ -99,7 +99,7 @@ class ArtifactoryItemTest {
     artifact.setArtifacts(artifacts);
 
     Artifact matchableArtifact =
-        artifact.toMatchableArtifact(ArtifactoryRepositoryType.MAVEN, null);
+        artifact.toMatchableArtifact(ArtifactoryRepositoryType.Maven, null);
     assertThat(matchableArtifact.getMetadata().get("build")).isEqualTo(expectedBuild);
   }
 }
